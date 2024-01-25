@@ -1,4 +1,4 @@
-# CRUD-App---Wellmeadows-Hospital-Management-System
+# CRUD-App-Wellmeadows-Hospital-Management-System
 
 ## Overview
 The Wellmeadows HMS project integrates various management functionalities for Wellmeadows Hospital, specializing in elderly care. It aims to replace disparate systems with a unified solution, enhancing resource planning and operational efficiency.
