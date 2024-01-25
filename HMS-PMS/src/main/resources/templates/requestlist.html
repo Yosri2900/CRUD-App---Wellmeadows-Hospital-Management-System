@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+            crossorigin="anonymous"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <title>View Patients</title>
+    <a th:href="@{/}" role="button" class="btn btn-secondary mx-auto"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"/>
+    </svg></a>
+    <h1>View Request List</h1>
+    <table class = "table table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>Patient ID</th>
+            <th>Division ID</th>
+            <th>Rationale</th>
+            <th>Priority</th>
+            <th>Time/Date</th>
+            <th>ADMIT</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="request : ${requestList}">
+            <td th:text="${request.patId}"></td>
+            <td th:text="${request.divId}"></td>
+            <td th:text="${request.rationale}"></td>
+            <td th:text="${request.priority}"></td>
+            <td th:text="${request.requestDate}"></td>
+            <td>
+                <a th:href="@{'admitpatient/{id}'(id=${request.patId})}" class="btn btn-info" role="button">ADMIT</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</head>
+<body>
+
+</body>
+</html>

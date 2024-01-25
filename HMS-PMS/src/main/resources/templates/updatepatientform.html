@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+            crossorigin="anonymous"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link
+            rel="stylesheet"
+            href="style.css"
+    />
+    <script src="code.js"></script>
+
+    <title>Register Patient</title>
+
+</head>
+<body>
+<a th:href="@{/}" role="button" class="btn btn-secondary mx-auto"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"/>
+</svg></a>
+<h2 th:text="'Update Patient ID: '+${id}"></h2>
+<div class="container" id="Book">
+    <form action="#" class="row g-5" th:action="@{/updatepatients}" th:object="${patientAccountData}" th:method="put">
+        <div class="form-group">
+            <label for="unique-gov-id" class="form-label">Unique Patient Government Identifier:</label>
+            <input type="text" th:field="*{patId}" class="form-control" id="unique-gov-id" required>
+        </div>
+        <div class="form-group">
+            <label for="first-name" class="form-label">First Name:</label>
+            <input type="text"  th:field="*{firstName}" class="form-control" id="first-name" required>
+        </div>
+        <div class="form-group">
+            <label for="last-name" class="form-label">Last Name:</label>
+            <input type="text"  th:field="*{lastName}" class="form-control" id="last-name" required>
+        </div>
+        <div class="form-group">
+            <label for="email" class="form-label">Email:</label>
+            <input type="text" th:field="*{patientEmail}" class="form-control" id="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone-num" class="form-label">Telephone Number:</label>
+            <input type="text"  th:field="*{phoneNumber}" class="form-control" id="phone-num" required>
+        </div>
+        <div class="form-group">
+            <label for="address" class="form-label">Address:</label>
+            <input type="text" th:field="*{address}" class="form-control" id="address" required>
+        </div>
+        <div class="form-group">
+            <label>Gender:</label>
+            <select class="form-select" th:field="*{gender}">
+                <option  value="Male"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gender-male" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M9.5 2a.5.5 0 0 1 0-1h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2.707L9.871 6.836a5 5 0 1 1-.707-.707L13.293 2zM6 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8"/>
+                </svg>Male</option>
+                <option value="Female"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gender-female" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1a4 4 0 1 0 0 8 4 4 0 0 0 0-8M3 5a5 5 0 1 1 5.5 4.975V12h2a.5.5 0 0 1 0 1h-2v2.5a.5.5 0 0 1-1 0V13h-2a.5.5 0 0 1 0-1h2V9.975A5 5 0 0 1 3 5"/>
+                </svg>Female</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Marital Status:</label>
+            <select class="form-select" th:field="*{maritalStatus}">
+                <option value="Married">Married</option>
+                <option value="Single">Single</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="external-fam-doctor-email"  class="form-label">External/Family doctor Email:</label>
+            <input type="text" th:field="*{doctorEmail}" class="form-control" id="external-fam-doctor-email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="kin-first-name"  class="form-label">Patient next-of-kin first name:</label>
+            <input type="text" th:field="*{nokName}" class="form-control" id="kin-first-name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="kin-relation-ship"  class="form-label">Patient next-of-kin relationship to patient:</label>
+            <input type="text" th:field="*{nokRelationship}" class="form-control" id="kin-relation-ship" required>
+        </div>
+
+        <div class="form-group">
+            <label for="kin-address"  class="form-label">Patient next-of-kin address:</label>
+            <input type="text" th:field="*{nokAddress}" class="form-control" id="kin-address" required>
+        </div>
+
+        <div class="form-group">
+            <label for="kin-telephone"  class="form-label">Patient next-of-kin telephone number:</label>
+            <input type="text" th:field="*{nokPhoneNumber}" class="form-control" id="kin-telephone" required>
+        </div>
+
+<!--        <div class="form-group" th:switch="${changeprescriptions}">-->
+<!--            <label>Prescription-->
+<!--                <textarea th:case="'yes'" class="form-control" rows="3"></textarea>-->
+<!--                <textarea th:case="'no'" class="form-control" rows="3" disabled readonly></textarea>-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        TODO: The error is too figure out how the Mutable Map will get populated accordingly-->
+
+<!--        <div class="form-group">-->
+<!--            <label>Prescription-->
+<!--                <textarea th:field="*{prescriptions}" class="form-control" rows="3"></textarea>-->
+<!--            </label>-->
+<!--        </div>-->
+
+        <button type="submit" id="submit" onclick="myFunction()" class="btn btn-primary">Update Patient</button>
+    </form>
+    <h2>Prescriptions</h2>
+    <div>
+        <table class = "table table-striped table-responsive-md">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Units per Day</th>
+                <th>Number of administration per day</th>
+                <th>Time of days with units administered</th>
+                <th>Admission Method</th>
+                <th>Start date</th>
+                <th>Finish Date</th>
+
+                <!--            <th>Discharge</th>-->
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="pres : ${patPrescriptions}">
+                <td th:text="${pres.presId}"></td>
+                <td th:text="${pres.presName}"></td>
+                <td th:text="${pres.unitsPerDay}"></td>
+                <td th:text="${pres.numAdmPerDay}"></td>
+                <td th:text="${pres.adminTimeAndNumUnitsRecord}"></td>
+                <td th:text="${pres.admMethod}"></td>
+                <td th:text="${pres.startDate}"></td>
+                <td th:text="${pres.endDate}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"
+></script>
+<script>
+    function myFunction() {
+        // location.replace("old.html")
+    }
+</script>
+</body>
+</html>

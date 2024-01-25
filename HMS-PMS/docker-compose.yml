@@ -1,0 +1,37 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo
+    volumes:
+      - mongodata:/var/lib/mongdodb/data
+    container_name: mongodb
+    restart: always
+    networks:
+      - db-network
+    healthcheck:
+      test: ["CMD", "mongo", "--eval", "db.adminCommand('ping')"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+    ports:
+      - 27017:27017
+
+  hmspms:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hmspms
+    image: hmspms-app:latest
+    environment:
+      DB_HOST: mongodb
+    networks:
+      - db-network
+    ports:
+      - 9000:9000
+
+networks:
+  db-network:
+
+volumes:
+  mongodata:

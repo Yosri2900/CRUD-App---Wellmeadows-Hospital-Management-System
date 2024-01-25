@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{layout}">> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link
+    rel="stylesheet"
+    href="style.css"
+  />
+  <script src="code.js"></script>
+    <title>Services - Wellmeadows Hospital Management System - Prescription Management System</title>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3">
+        <img src="img/cerx.png" alt="Logo" style="height: 150px; width: 150px;">
+        <div class="container">
+            <a href="#" class="navbar-brand" >Wellmeadows Hospital Management System - Prescription Management System</a>
+
+            <button
+            class="navbar-toggler" 
+            type="button" 
+            ata-bs-toggle="collapse" 
+            data-bs-target="#navmenu"
+            >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navmenu"></div>
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="Services.html" class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+                <a href="addPrescription.html" class="nav-link">addPrescription</a>
+            </li>
+            <li class="nav-item">
+                <a href="registerPatient.html" class="nav-link">Register Patient</a>
+            </li>
+            <li class="nav-item">
+                <a href="registerUser.html" class="nav-link">Register User</a>
+            </li>
+            <li class="nav-item">
+                <a href="staffLogin.html" class="nav-link">Staff Login</a>
+            </li>
+        </ul>
+        </div>
+    </nav>
+
+    <!-- Our Services -->
+    <section id="services" class="p-5 bg-light">
+        <div class="container">
+            <h2 class="text-center text-danger">Our Services</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img src="img/detailing.jpeg"  style="height: 125px; width: 170px;" class="square mb-3" alt="">
+                            <h3 class="card-title mb-3">Register Patient</h3>
+             
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img src="img/auto.jpeg"  style="height: 125px; width: 170px;" class="square mb-3" alt="">
+                            <h3 class="card-title mb-3">Consult Patient File</h3>
+
+                            
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img src="img/oil.jpeg"  style="height: 125px; width: 170px;" class="square mb-3" alt="">
+                            <h3 class="card-title mb-3">View Division</h3>
+             
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img src="img/oil.jpeg"  style="height: 125px; width: 170px;" class="square mb-3" alt="">
+                            <h3 class="card-title mb-3" a href="addPrescription.html">Add Prescription</h3>
+              
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        function myFunction() {
+          location.replace("old.html")
+        }
+    </script>
+</body>
+</html>
